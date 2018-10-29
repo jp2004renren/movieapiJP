@@ -1,4 +1,4 @@
-package fr.ecp.sio;
+package fr.ecp.sio.movieapiJP.services;
 
 import com.google.appengine.api.utils.SystemProperty;
 
