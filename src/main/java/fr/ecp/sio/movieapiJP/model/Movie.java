@@ -61,6 +61,10 @@ public class Movie {
         this.genres = genres;
     }
 
+    @Override
+    public String toString() {
+        return getTitle();
+    }
 
     //private List<MoviePerson> contributors;
 }

@@ -1,8 +1,12 @@
 package fr.ecp.sio.movieapiJP.services;
 
 import com.google.appengine.api.utils.SystemProperty;
+import fr.ecp.sio.movieapiJP.data.MoviesRepository;
+import fr.ecp.sio.movieapiJP.data.flat.MoviesRepositoryImpl;
+import fr.ecp.sio.movieapiJP.model.Movie;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +27,10 @@ public class HelloAppEngine extends HttpServlet {
 
     response.setContentType("text/plain");
 
-    response.getWriter().println("Hello World");
+    //response.getWriter().println("Hello World");
+
+    List<Movie> movies = MoviesRepository.getInstance().getMovie();
+    response.getWriter().println(movies.toString());
 
     /*response.getWriter().println("Hello App Engine - Standard using "
         + SystemProperty.version.get() + " Java " + properties.get("java.specification.version"));*/
